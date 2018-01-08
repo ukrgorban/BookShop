@@ -45,81 +45,15 @@
       "price": 777
     },
     {
-      "author": "Author ",
-      "title": "Title",
-      "isbn": "Author ",
-      "pages": "1",
-      "publisherId": "1",
-      "formatId": "1",
-      "description": "Description",
-      "price": "250",
-      "id": 5
-    },
-    {
-      "author": "new author",
-      "title": "new title",
-      "isbn": "new author",
-      "pages": "500",
-      "publisherId": "9",
-      "formatId": "4",
-      "description": "New description",
-      "price": "1000",
-      "id": 6
-    },
-    {
-      "author": "asds",
-      "title": "sadsad",
-      "isbn": "asds",
-      "pages": "33",
-      "publisherId": "17",
-      "formatId": "3",
-      "description": "323123123",
-      "price": "222",
-      "id": 7
-    },
-    {
-      "author": "Alexandr Gorban",
-      "title": "Angular JS 5",
-      "isbn": "Alexandr Gorban",
-      "pages": "200",
-      "publisherId": "18",
-      "formatId": "2",
-      "description": "Angular JS 5",
-      "price": "333",
-      "id": 8
-    },
-    {
-      "author": "dddd",
-      "title": "dddd",
-      "isbn": "dddd",
-      "pages": "250",
-      "publisherId": "58",
-      "formatId": "3",
-      "description": "dddd",
-      "price": "250",
-      "id": 9
-    },
-    {
-      "author": "asdfa",
-      "title": "asasd",
-      "isbn": "asdfa",
-      "pages": "asasd",
-      "publisherId": "10",
-      "formatId": "1",
-      "description": "asasd",
-      "price": "25",
-      "id": 10
-    },
-    {
-      "author": "kkk",
-      "title": "kkk",
-      "isbn": "kkk",
-      "pages": "250",
-      "publisherId": 105,
-      "formatId": "5",
-      "description": "kkkk",
-      "price": "25",
-      "id": 11
+      "author": "Andrew Mayne",
+      "title": "The Naturalist",
+      "isbn": "Andrew Mayne",
+      "pages": 400,
+      "publisherId": 102,
+      "formatId": 1,
+      "description": "Professor Theo Cray is trained to see patterns where others see chaos. So when mutilated bodies found deep in the Montana woods leave the cops searching blindly for clues, Theo sees something they missed.",
+      "price": 129,
+      "id": 12
     }
   ],
   "formats": [

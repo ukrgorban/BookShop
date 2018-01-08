@@ -26,4 +26,65 @@ export class BooksService {
             .map((response: Response) => response.json());
     }
 
+    search(queryParams: {}) {
+        return this.http.get(`http://localhost:3004/books/`, { headers: this.headers})
+            .map(books => {
+                
+                // filtering an array of books by queryParams
+                const searchBooks = books.json().filter((book) => {
+                    
+                    // checking the parameters for compliance with the book
+                    const error = [];
+
+                    for(let prop in queryParams) {
+
+                        if(prop === 'formatId'){
+                            if(+book[prop] !== +queryParams[prop]){
+                                error.push('err');
+                            }
+                        }
+
+                        if(prop === 'author' || prop === 'title' || prop === 'isbn'){
+                            const bookProp = book[prop].toLowerCase();
+                            const searchParam = queryParams[prop].toLowerCase();
+
+                            if(bookProp.indexOf(searchParam) == -1){
+                                error.push('err');
+                            }
+                        }
+                        
+                        if(prop === 'pageMin'){
+                            if(book['pages'] < +queryParams[prop]){
+                                error.push('err');
+                            }
+                        }
+
+                        if(prop === 'pageMax'){
+                            if(book['pages'] >= +queryParams[prop]){
+                                error.push('err');
+                            }
+                        }
+                        
+                        if(prop === 'priceMin'){
+                            if(book['price'] < +queryParams[prop]){
+                                error.push('err');
+                            }
+                        }
+                        
+                        if(prop === 'priceMax'){
+                            if(book['price'] >= +queryParams[prop]){
+                                error.push('err');
+                            }
+                        }
+                    }
+                    
+                    if(error.length == 0){
+                        return book;
+                    }
+                });
+
+                return searchBooks;
+
+            });
+    }
 }

@@ -1,7 +1,7 @@
-<div class="full-width-container">
+<div class="full-width-container"> 
     <div class="row">
         <div class="col-sm-6">
-            <form>
+            <form [formGroup]="form">
 
                 <h3 class="mb-4">Search</h3>
 
@@ -9,7 +9,12 @@
 
                   <label for="author" class="col-sm-3 col-form-label">Author</label>
                   <div class="col-sm-7">
-                    <input class="form-control" id="author">
+                    <input 
+                        class="form-control" 
+                        id="author" 
+                        formControlName="author"
+                        (keyup)="addQueryParam()"
+                        >
                   </div>
 
                 </div>
@@ -18,7 +23,12 @@
 
                   <label for="title" class="col-sm-3 col-form-label">Title</label>
                   <div class="col-sm-7">
-                    <input class="form-control" id="title">
+                    <input 
+                        class="form-control" 
+                        id="title"
+                        formControlName="title"
+                        (keyup)="addQueryParam()"
+                        >
                   </div>
 
                 </div>
@@ -27,7 +37,12 @@
 
                   <label for="isbn" class="col-sm-3 col-form-label">ISBN</label>
                   <div class="col-sm-7">
-                    <input class="form-control" id="isbn">
+                    <input 
+                        class="form-control" 
+                        id="isbn"
+                        formControlName="isbn"
+                        (keyup)="addQueryParam()"
+                        >
                   </div>
 
                 </div>
@@ -35,10 +50,15 @@
                 <div class="form-group row">
                   <label for="format" class="col-sm-3 col-form-label">Format</label>
                   <div class="col-sm-7">
-                    <select class="form-control" id="format">
+                    <select 
+                     class="form-control" 
+                     id="format"
+                     formControlName="formatId"
+                     (change)="addQueryParam()"
+                     >
                       <option 
                           *ngFor="let format of formats"
-                          [ngValue]="format.id"
+                          [value]="format.id"
                           >{{ format.name }}</option>
                     </select>
                   </div>
@@ -51,7 +71,12 @@
 
                       <label for="page-min" class="col-sm-6 col-form-label">Pages between</label>
                       <div class="col-sm-6">
-                        <input class="form-control" id="page-min">
+                        <input 
+                            class="form-control" 
+                            id="page-min"
+                            formControlName="pageMin"
+                            (keyup)="addQueryParam()"
+                            >
                       </div>
 
                     </div>
@@ -62,7 +87,12 @@
 
                       <label  class="col-sm-2 col-form-label text-center" for="page-max">and</label>
                       <div class="col-sm-6">
-                        <input class="form-control" id="page-max">
+                        <input 
+                            class="form-control" 
+                            id="page-max"
+                            formControlName="pageMax"
+                            (keyup)="addQueryParam()"
+                            >
                       </div>
 
                     </div>
@@ -77,7 +107,12 @@
 
                       <label for="price-min" class="col-sm-6 col-form-label">Price between</label>
                       <div class="col-sm-6">
-                        <input class="form-control" id="price-min">
+                        <input 
+                            class="form-control" 
+                            id="price-min"
+                            formControlName="priceMin"
+                            (keyup)="addQueryParam()"
+                            >
                       </div>
 
                     </div>
@@ -88,19 +123,33 @@
 
                       <label  class="col-sm-2 col-form-label text-center" for="price-max">and</label>
                       <div class="col-sm-6">
-                        <input class="form-control" id="price-max">
+                        <input 
+                            class="form-control" 
+                            id="price-max"
+                            formControlName="priceMax"
+                            (keyup)="addQueryParam()"
+                            >
                       </div>
 
                     </div>
                   </div>
-
                 </div>
-
           </form>
         </div>
         <div class="col-sm-6">
             <h3 class="mb-4">List of Matched Books</h3>
-            <app-showcase></app-showcase>
+            <div class="card" *ngFor="let book of books">
+                <h4 class="card-header">Author - {{ book.author }}</h4>
+                <div class="card-body">
+                    <h4 class="card-title">Title - {{ book.title }}</h4>
+                    <p class="card-text">{{ book.description }}</p>
+                    <p>
+                        <span class="badge badge-danger">{{ book.price | currency }}</span>
+                        <span class="badge badge-info">{{ book.pages }} pages</span>
+                    </p>
+                    <!--<a href="#" (click)="goAddBooksPage($event)" class="btn btn-primary" >Add New Book</a>-->
+                </div>
+            </div>
         </div>
     </div>
 </div>
