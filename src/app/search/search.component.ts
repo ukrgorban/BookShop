@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
             author: new FormControl(),
             title: new FormControl(),
             isbn: new FormControl(),
-            formatId: new FormControl('1'),
+            formatId: new FormControl(),
             pageMin: new FormControl(),
             pageMax: new FormControl(),
             priceMin: new FormControl(),
@@ -42,6 +42,12 @@ export class SearchComponent implements OnInit {
     }
 
     addQueryParam() {
+        for (const prop in this.form.value) {
+            if (this.form.value[prop] == false) {
+                delete this.form.value[prop];
+            }
+        }
+
         this.router.navigate(['/search'], { queryParams: this.form.value });
     }
 
