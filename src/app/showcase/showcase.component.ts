@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./showcase.component.css']
 })
 export class ShowcaseComponent implements OnInit {
-    books = [];
+    books: Object[];
 
     constructor(private booksService: BooksService, private router: Router) { }
 

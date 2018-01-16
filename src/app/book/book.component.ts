@@ -7,10 +7,10 @@ import { BooksService } from '../books.service';
     templateUrl: './book.component.html'
 })
 export class BookComponent implements OnInit {
-    formats = [];
-    countries = [];
-    cities = [];
-    publishers = [];
+    formats: Object[] = [];
+    countries: Object[] = [];
+    cities: Object[] = [];
+    publishers: Object[] = [];
 
     form: FormGroup;
 

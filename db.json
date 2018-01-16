@@ -54,6 +54,17 @@
       "description": "Professor Theo Cray is trained to see patterns where others see chaos. So when mutilated bodies found deep in the Montana woods leave the cops searching blindly for clues, Theo sees something they missed.",
       "price": 129,
       "id": 12
+    },
+    {
+      "author": "Bhanumathi Narasimhan",
+      "title": "Gurudev: On the Plateau of the Peak: The Life of Sri Sri Ravi Shankar",
+      "isbn": "Bhanumathi Narasimhan",
+      "pages": 450,
+      "publisherId": 155,
+      "formatId": 5,
+      "description": "It was an era when the wisdom of yoga had been buried under years of ritual practices, when religion outweighed human values, when games were becoming wars and wars were being played like games. It was at such a time that, in a quaint village in south India, a young boy was found in deep meditation. He would say, ‘I have family everywhere. People are waiting for me.’\n\nNobody believed him then.",
+      "price": 317,
+      "id": 13
     }
   ],
   "formats": [

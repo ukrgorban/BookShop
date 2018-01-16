@@ -9,9 +9,9 @@ import { BooksService } from '../books.service';
     templateUrl: './search.component.html'
 })
 export class SearchComponent implements OnInit {
-    formats;
+    formats: Object[];
     form: FormGroup;
-    books;
+    books: Object[];
 
     constructor( private booksService: BooksService, private router: Router, private activateRoute: ActivatedRoute ) {}
 
